@@ -51,8 +51,8 @@ function generateTable(data, problems) {
 function checkAnswer(handle, problems, callbackFunction) {
 	var baseUrl = 'https://codeforces.com/api/';
 	var methodName = 'user.status';
-	var finalUrl = baseUrl+methodName+'?handle=kcaj';
-	const https = new XMLHttpsRequest();
+	var finalUrl = baseUrl + methodName +'?handle=kcaj';
+	const https = new XMLHttpRequest();
 	https.open("GET", finalUrl);
 	https.onload = () => callbackFunction(JSON.parse(https.responseText), problems); 
 	https.send();
