@@ -1,0 +1,67 @@
+table {
+	border-collapse: collapse;
+}
+
+body {
+	background-color: #404ffe;
+}
+#menu {
+	background-color: #8c9eff;
+	height: 100px
+}
+#menu button {
+	padding: 15px 32px;
+	margin-left: 25px;
+	margin-top: 15px;
+	border: none;
+	background-color: #26a69a;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	font-style: bold;
+}
+
+#menu button:hover {
+	color: white;
+}
+
+div#progress h2 {
+	padding: 10px;
+	margin: 20px auto;
+	color: #009688;
+}
+
+div table#mytable, th, td {
+  border: 1px solid black;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+td.WA {
+	background-color: #f36c60;
+}
+
+td.AC {
+	background-color: #8bc34a;
+}
+
+td.TLE {
+	background-color: #ffc107;
+}
+
+td.RTE {
+	background-color: #ff9800;
+}
+
+
+td.MLE {
+	background-color: #ffcc80;
+}
+
+td {
+	background-color: #80cbc4;
+}
+
+th {
+	background-color: #00796b;
+}
