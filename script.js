@@ -1,11 +1,13 @@
-window.onload = function() {
-	document.getElementById('handle').innerHTML = getHandle();
-}
 function getHandle() {
 	var queryString = window.location.search;
 	var params = new URLSearchParams(queryString);
 	return params.get('handle');
 }
+
+window.onload = function() {
+	document.getElementById('handle').innerHTML = getHandle();
+}
+
 function dataFilter(result, dataTable) {
 	var qntAC = 0;
 	for(let j = 0; j < dataTable.length; j += 1) {
