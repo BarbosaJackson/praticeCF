@@ -4,8 +4,12 @@ function getHandle() {
 	return params.get('handle');
 }
 
-window.onload = function() {
-	document.getElementById('handle').innerHTML = getHandle();
+window.onload = initPage;
+
+function initPage() {
+	handle = getHandle();
+	document.getElementById('handle').innerHTML = handle;
+	console.log(handle);
 }
 
 function dataFilter(result, dataTable) {
