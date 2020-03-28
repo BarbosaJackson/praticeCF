@@ -48,6 +48,7 @@ function createTable(dataTable, qnt, qntAC) {
 		</tr>`;
 	}
 	stringTable += "</tbody></table>"
+	console.log(stringTable);
 	document.getElementById('progress').innerHTML = `<h3>Quantidade de questões: ${qnt}</h3><h3>Quantidade de questões resolvidas: ${qntAC}</h3><h3>Totalizando ${(100 * qntAC)/qnt}% do total de questões`;
 	document.getElementById('mytable').innerHTML = stringTable;
 }
@@ -59,10 +60,12 @@ function generateTable(data, problems) {
 		dataTable.push({'verdict': 'void', 'problem' : {'name': problems[i]['name'], 'url': problems[i]['url'], 'points': ''}});
 	}
 	qntAC = dataFilter(data['result'], dataTable);
+	console.log(dataTable);
 	createTable(dataTable, problems.length, qntAC);
 }
 
 function checkAnswer(handle, problems, callbackFunction) {
+	console.log(handle);
 	var baseUrl = 'https://codeforces.com/api/';
 	var methodName = 'user.status';
 	var finalUrl = baseUrl + methodName +'?handle=' + handle;
