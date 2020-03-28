@@ -1,3 +1,11 @@
+window.onload = function() {
+	document.getElementById('handle').innerHTML = getHandle();
+}
+function getHandle() {
+	var queryString = window.location.search;
+	var params = new URLSearchParams(queryString);
+	return params.get('handle');
+}
 function dataFilter(result, dataTable) {
 	var qntAC = 0;
 	for(let j = 0; j < dataTable.length; j += 1) {
@@ -51,14 +59,12 @@ function generateTable(data, problems) {
 function checkAnswer(handle, problems, callbackFunction) {
 	var baseUrl = 'https://codeforces.com/api/';
 	var methodName = 'user.status';
-	var finalUrl = baseUrl + methodName +'?handle=kcaj';
+	var finalUrl = baseUrl + methodName +'?handle=' + handle;
 	const https = new XMLHttpRequest();
 	https.open("GET", finalUrl);
 	https.onload = () => callbackFunction(JSON.parse(https.responseText), problems); 
 	https.send();
 }
-
-
 
 function getDataTable(index) {
 	var questions = [ {
@@ -166,5 +172,5 @@ function getDataTable(index) {
 		{"name": "A Prank", "url": "https://codeforces.com/problemset/problem/1062/A"},
 		]
 	}];
-	checkAnswer('kcaj', questions[index]['problems'], generateTable);
+	checkAnswer(getHandle(), questions[index]['problems'], generateTable);
 }
